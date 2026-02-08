@@ -32,24 +32,12 @@ To use a skill, reference the skill file (e.g., `.claude/skills/ros2_node_creati
 
 ## Common Commands
 
-### Build & Test
+For a comprehensive list of ROS2 commands, build instructions, and debugging tools, please refer to:
+
+- **[ROS2 Commands Reference](.claude/commands/ros2.md)**: `colcon`, `ros2`, `rqt`, etc.
+
+### Quick Reference
 
 - **Build**: `colcon build --symlink-install`
-- **Build Package**: `colcon build --packages-select <package_name>`
 - **Test**: `colcon test`
 - **Source**: `source install/setup.bash`
-
-### Introspection
-
-- **List Nodes**: `ros2 node list`
-- **List Topics**: `ros2 topic list`
-- **Echo Topic**: `ros2 topic echo <topic_name>`
-- **List Services**: `ros2 service list`
-- **Call Service**: `ros2 service call <service_name> <service_type> <args>`
-- **List Parameters**: `ros2 param list`
-
-### Debugging
-
-- **Doctor**: `ros2 doctor`
-- **Graph**: `rqt_graph`
-- **Monitor**: `rqt_topic`
