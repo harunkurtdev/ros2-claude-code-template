@@ -44,7 +44,7 @@ This rule file defines how to apply Clean Architecture principles in ROS2 projec
 #### Python Example
 
 ```python
-# ✅ CORRECT: Pure Python, no external dependencies
+# CORRECT: Pure Python, no external dependencies
 from dataclasses import dataclass
 from abc import ABC, abstractmethod
 from uuid import UUID, uuid4
@@ -77,7 +77,7 @@ class Robot(Entity):
 #### C++ Example
 
 ```cpp
-// ✅ CORRECT: Pure C++, no ROS2 dependencies
+// CORRECT: Pure C++, no ROS2 dependencies
 #pragma once
 #include <string>
 #include <memory>
@@ -103,7 +103,7 @@ struct Robot {
 #### Python Example
 
 ```python
-# ✅ CORRECT: Immutable, no identity
+# CORRECT: Immutable, no identity
 from dataclasses import dataclass
 
 @dataclass(frozen=True)
@@ -122,7 +122,7 @@ class Position:
 #### C++ Example
 
 ```cpp
-// ✅ CORRECT: Immutable struct (const members or accessors)
+// CORRECT: Immutable struct (const members or accessors)
 #pragma once
 #include <cmath>
 
@@ -150,7 +150,7 @@ struct Position {
 #### Python Example
 
 ```python
-# ✅ CORRECT: Abstract interface in domain layer
+# CORRECT: Abstract interface in domain layer
 from abc import ABC, abstractmethod
 from typing import Optional, List
 
@@ -169,7 +169,7 @@ class RobotRepository(ABC):
 #### C++ Example
 
 ```cpp
-// ✅ CORRECT: Abstract base class (interface)
+// CORRECT: Abstract base class (interface)
 #pragma once
 #include "domain/entities/robot.hpp"
 #include <optional>
@@ -194,7 +194,7 @@ public:
 #### Python Example
 
 ```python
-# ✅ CORRECT: Business logic orchestration
+# CORRECT: Business logic orchestration
 class MoveRobotUseCase:
     def __init__(self, motion_controller: MotionController):
         self._motion_controller = motion_controller
@@ -206,7 +206,7 @@ class MoveRobotUseCase:
 #### C++ Example
 
 ```cpp
-// ✅ CORRECT: Business logic orchestration
+// CORRECT: Business logic orchestration
 #pragma once
 #include "domain/interfaces/motion_controller.hpp"
 
@@ -235,7 +235,7 @@ private:
 #### Python Example
 
 ```python
-# ✅ CORRECT: Implements domain interface
+# CORRECT: Implements domain interface
 import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
@@ -248,7 +248,7 @@ class ROS2MotionController(MotionController):
 #### C++ Example
 
 ```cpp
-// ✅ CORRECT: Implements domain interface
+// CORRECT: Implements domain interface
 #include "domain/interfaces/motion_controller.hpp"
 #include <rclcpp/rclcpp.hpp>
 #include <geometry_msgs/msg/twist.hpp>
@@ -279,14 +279,14 @@ private:
 ### Python
 
 ```python
-# ❌ INCORRECT: Domain importing ROS2
+# INCORRECT: Domain importing ROS2
 from rclpy.node import Node  # Domain should NOT import ROS2!
 
 class Robot(Entity):
     def __init__(self, node: Node):  # WRONG!
         self.node = node
 
-# ❌ INCORRECT: Business logic in infrastructure
+# INCORRECT: Business logic in infrastructure
 class ROS2MotionController:
     def move_to(self, position):
         # WRONG: Business rules should be in domain/application
@@ -297,7 +297,7 @@ class ROS2MotionController:
 ### C++
 
 ```cpp
-// ❌ INCORRECT: Domain header including ROS2
+// INCORRECT: Domain header including ROS2
 #include <rclcpp/rclcpp.hpp> // WRONG in Domain!
 
 namespace domain::entities {

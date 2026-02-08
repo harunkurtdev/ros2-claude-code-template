@@ -38,13 +38,13 @@ This rule file defines communication standards in ROS2.
 
 ### Naming Rules
 
-| Rule                           | Example                           |
-| ------------------------------ | --------------------------------- |
-| Use lowercase                  | `/robot/cmd_vel` ✅               |
-| Use underscores for multi-word | `/joint_states` ✅                |
-| Avoid abbreviations            | `/camera/image` ✅ not `/cam/img` |
-| Use namespaces                 | `/robot1/cmd_vel` ✅              |
-| Be descriptive                 | `/laser_scan` ✅ not `/ls`        |
+| Rule                           | Example                        |
+| ------------------------------ | ------------------------------ |
+| Use lowercase                  | `/robot/cmd_vel`               |
+| Use underscores for multi-word | `/joint_states`                |
+| Avoid abbreviations            | `/camera/image` not `/cam/img` |
+| Use namespaces                 | `/robot1/cmd_vel`              |
+| Be descriptive                 | `/laser_scan` not `/ls`        |
 
 ## QoS Profiles
 
