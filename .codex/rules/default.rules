@@ -1,0 +1,64 @@
+# Codex command execution policy for this repository.
+# Reference: https://developers.openai.com/codex/rules
+
+# Allow common ROS2 development commands outside sandbox.
+prefix_rule(
+    pattern = [["colcon", "ros2", "rosdep", "vcs", "pytest"]],
+    decision = "allow",
+    justification = "Core ROS2 development and testing commands are allowed.",
+    match = [
+        "colcon build --symlink-install",
+        "colcon test --packages-select my_pkg",
+        "ros2 topic list",
+        "rosdep install --from-paths src --ignore-src -r -y",
+        "pytest -q",
+    ],
+    not_match = [
+        "python3 -m pytest -q",
+    ],
+)
+
+# Allow routine git inspection and local commits.
+prefix_rule(
+    pattern = ["git", ["status", "diff", "log", "add", "commit"]],
+    decision = "allow",
+    justification = "Local git inspection and commit operations are part of normal workflow.",
+    match = [
+        "git status",
+        "git diff",
+        "git log --oneline -20",
+        "git add .",
+        "git commit -m update",
+    ],
+    not_match = [
+        "git push origin main",
+    ],
+)
+
+# Prompt before pushing code remotely.
+prefix_rule(
+    pattern = ["git", "push"],
+    decision = "prompt",
+    justification = "Remote writes require explicit approval.",
+)
+
+# Prompt before Docker usage due to system/network impact.
+prefix_rule(
+    pattern = ["docker"],
+    decision = "prompt",
+    justification = "Docker commands can affect system state and should be reviewed.",
+)
+
+# Forbid dangerous destructive commands.
+prefix_rule(
+    pattern = ["rm", "-rf"],
+    decision = "forbidden",
+    justification = "Use safer targeted deletes (`rm -f <file>`) instead of recursive force removal.",
+)
+
+# Forbid privileged escalation.
+prefix_rule(
+    pattern = ["sudo"],
+    decision = "forbidden",
+    justification = "Do not use sudo in Codex sessions; request explicit user-run steps instead.",
+)
