@@ -84,6 +84,7 @@ and use it directly.
 │   ├── ros2_control_demos.md      — ros2_control_demos example catalog (17)
 │   ├── behaviortree_cpp.md        — BehaviorTree.CPP v4 core reference
 │   ├── behaviortree_ros2.md       — BehaviorTree.ROS2 wrappers + execution server
+│   ├── webots_ros2_architecture.md — Webots ROS 2 driver, device plugins, ros2_control bridge
 │   ├── vda5050_protocol.md        — VDA 5050 v3.0.0 fleet interface overview
 │   ├── vda5050_messages.md        — VDA 5050 v3.0.0 complete message spec + processes
 │   ├── vda5050_implementation_formats.md — VDA 5050 code-gen format analysis (3 reference idioms)
@@ -94,6 +95,7 @@ and use it directly.
     ├── clean-arch-architect.md    — Layer / dependency design advisor
     ├── ros2-controllers-reviewer.md — ros2_control controller PR reviewer
     ├── behaviortree-reviewer.md   — BehaviorTree.CPP / ROS2 PR reviewer
+    ├── webots-ros2-reviewer.md    — webots_ros2 plugin / launch PR reviewer
     │  ── gz-sim / Gazebo ──
     ├── gz-style-reviewer.md       — gz-sim style / PR review expert
     ├── ecs-architect.md           — ECS design advisor
@@ -122,6 +124,7 @@ Invoked directly from the terminal:
 /new-hardware my_pkg MyRobotHardware system
 /new-bt-node my_pkg MyAction ros-action
 /new-vda5050-connector my_connector python robot
+/new-webots-plugin my_pkg MyLidar cpp Lidar
 /changelog
 
 # Extend this template itself (self-extensible)

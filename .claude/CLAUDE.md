@@ -63,6 +63,7 @@ For C++ the same separation lives under `include/<pkg>/<layer>/` and
 | Write a ros2_control hardware component / bring up a robot | `skills/ros2_control_hardware_interface/SKILL.md` + `rules/ros2_control_demos.md` |
 | Find a runnable ros2_control example   | `rules/ros2_control_demos.md` (17-example map) |
 | Write a behavior-tree node (BT.CPP / ROS 2) | `rules/behaviortree_cpp.md` + `rules/behaviortree_ros2.md` + `skills/behaviortree_node_creation/SKILL.md` |
+| Interface a Webots robot/sensor with ROS 2 | `rules/webots_ros2_architecture.md` + `skills/webots_ros2_device_plugin/SKILL.md` |
 | Bridge a VDA 5050 fleet interface     | `rules/vda5050_protocol.md` + `skills/vda5050_integration/SKILL.md` |
 | Look up any VDA 5050 message/field    | `rules/vda5050_messages.md` (complete spec) |
 | Generate VDA 5050 code (which format?) | `rules/vda5050_implementation_formats.md` (pydantic / ROS msg / C++ idioms + v2→v3 diffs) |
@@ -86,6 +87,7 @@ For C++ the same separation lives under `include/<pkg>/<layer>/` and
 | `/new-hardware <pkg> <Class> <system\|actuator\|sensor>` | Scaffold a ros2_control hardware component + URDF + bringup. |
 | `/new-bt-node <pkg> <Class> <kind>` | Scaffold a BehaviorTree.CPP / BehaviorTree.ROS2 leaf node. |
 | `/new-vda5050-connector <pkg> [py\|cpp] [fleet\|robot]` | Scaffold a Clean-Architecture VDA 5050 connector. |
+| `/new-webots-plugin <pkg> <Class> <cpp\|python> [device]` | Scaffold a webots_ros2 device/robot plugin + URDF + launch. |
 | `/new-skill <name>` / `/new-command <name>` / `/new-agent <name>` | Extend this `.claude/` config with a new asset (self-extensibility). |
 | `/changelog [base] [pkg]` | Generate a CHANGELOG.rst block from commits. |
 | `/gz-build [extra cmake args]` | `cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo` + build. |
@@ -109,6 +111,7 @@ executables — read them when you need the cheatsheet.
 | `vda5050-reviewer`    | Before opening a VDA 5050 connector PR — protocol compliance (topics, QoS, header, base/horizon, action state machine, schemas) + bridge Clean Architecture. |
 | `ros2-controllers-reviewer` | Before opening a ros2_control controller / broadcaster / hardware-component PR — lifecycle, command/state interface config, `update()`/`read()`/`write()` real-time safety, `generate_parameter_library`, pluginlib export, chainable correctness, URDF bringup, tests. |
 | `behaviortree-reviewer` | Before opening a BehaviorTree.CPP / BehaviorTree.ROS2 PR — node base-class choice, non-blocking ticks, ports/blackboard typing, factory/plugin registration, XML v4, ROS 2 wrapper contract. |
+| `webots-ros2-reviewer` | Before opening a webots_ros2 PR — plugin `init/step` contract (no `robot.step()`), URDF `<webots>` device/plugin wiring, `Ros2ControlSystem`, `WebotsLauncher`/`WebotsController` launch. |
 
 ## Skills index
 
@@ -170,6 +173,12 @@ executables — read them when you need the cheatsheet.
 | `new-component`    | Component header template (with or without custom serializer) |
 | `new-system`       | Full system plugin scaffold — header, source, CMake, plugin registration, integration test |
 
+### Webots simulation
+
+| Skill                       | Topic |
+|-----------------------------|-------|
+| `webots_ros2_device_plugin` | Interface a Webots robot/sensor with ROS 2 — device plugin (C++/Python), URDF `<webots>` wiring, ros2_control, launch (`/new-webots-plugin`) |
+
 ### Meta — extending this template
 
 | Skill                     | Topic |
@@ -193,6 +202,7 @@ executables — read them when you need the cheatsheet.
 | `ros2_control_demos.md` | ros2_control_demos catalog (17 examples) + hardware-component & bringup learning map |
 | `behaviortree_cpp.md`   | BehaviorTree.CPP v4 core — node hierarchy, NodeStatus, factory, ports/blackboard, XML v4, loggers |
 | `behaviortree_ros2.md`  | BehaviorTree.ROS2 — action/service/topic wrappers + TreeExecutionServer |
+| `webots_ros2_architecture.md` | webots_ros2 — driver, URDF `<webots>` device/plugin mechanism, device plugins, ros2_control bridge, launch, importer |
 | `vda5050_protocol.md`   | VDA 5050 v3.0.0 fleet interface — MQTT topics, message overview, action state machine |
 | `vda5050_messages.md`   | VDA 5050 v3.0.0 **complete** message spec (all 8 messages, every field) + communication processes |
 | `vda5050_implementation_formats.md` | VDA 5050 code-gen format analysis — 3 reference idioms (pydantic / ROS `.msg`+bridge / C++ structs) + v2→v3 differences |
