@@ -15,7 +15,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is missing, ask before scaffolding.
 
 Process:
-1. Read the skill `vda5050_integration`, the format guide
+1. Read the skill `vda5050-integration`, the format guide
    `vda5050_implementation_formats.md`, and the spec
    `vda5050_messages.md`. Pick the matching reference impl to mirror:
    * python + fleet → `~/nav2_ws/src/isaac_mission_dispatch`

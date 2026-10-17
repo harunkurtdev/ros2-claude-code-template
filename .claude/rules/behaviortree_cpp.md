@@ -157,10 +157,10 @@ sample_nodes/      # DummyNodes, CrossDoor, MoveBase examples (copy these)
 ## 9. Relationship to Nav 2 and ROS 2
 
 - **Nav 2** uses BehaviorTree.CPP directly; its 82 BT nodes live in
-  `nav2_behavior_tree` (see skill `nav2_behavior_tree`). Those are Nav 2
+  `nav2_behavior_tree` (see skill `nav2-behavior-tree`). Those are Nav 2
   specific.
 - **BehaviorTree.ROS2** wraps ROS 2 actions/services/topics as BT leaf
   nodes generically — see `behaviortree_ros2.md` and the skill
-  `behaviortree_node_creation`.
+  `behaviortree-node-creation`.
 - BT.CPP itself has **no ROS dependency**; ROS is auto-detected
   (`ament_cmake`) only for packaging.

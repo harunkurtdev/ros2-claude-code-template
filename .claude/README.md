@@ -45,25 +45,25 @@ and use it directly.
 │   └── gz-changelog.md      — /gz-changelog    gz-sim Changelog.md block
 ├── skills/              # long-form recipes Claude consults
 │   │  ── ROS 2 ──
-│   ├── ros2_node_creation/        — Clean-arch compliant node
-│   ├── ros2_lifecycle/            — Managed lifecycle node
-│   ├── ros2_messaging/            — Pub / Sub patterns
-│   ├── ros2_service_action/       — Service & Action wrapping
-│   ├── ros2_launch_config/        — Modular launch
-│   ├── ros2_transforms/           — TF2 management
-│   ├── ros2_diagnostics/          — Health monitoring
-│   ├── ros2_bag/                  — Rosbag record/replay
-│   ├── ros2_testing/              — GTest / pytest / launch_testing
-│   ├── new_ros2_package/          — Package scaffold recipe
+│   ├── ros2-node-creation/        — Clean-arch compliant node
+│   ├── ros2-lifecycle/            — Managed lifecycle node
+│   ├── ros2-messaging/            — Pub / Sub patterns
+│   ├── ros2-service-action/       — Service & Action wrapping
+│   ├── ros2-launch-config/        — Modular launch
+│   ├── ros2-transforms/           — TF2 management
+│   ├── ros2-diagnostics/          — Health monitoring
+│   ├── ros2-bag/                  — Rosbag record/replay
+│   ├── ros2-testing/              — GTest / pytest / launch_testing
+│   ├── new-ros2-package/          — Package scaffold recipe
 │   │  ── Nav 2 ──
-│   ├── new_nav2_plugin/           — Nav 2 plugin scaffold recipe
-│   ├── nav2_core_interfaces/      — Plugin base classes
-│   ├── nav2_controllers/          — DWB / MPPI / RPP …
-│   ├── nav2_planners/             — NavFn / SMAC / Theta* …
-│   ├── nav2_behavior_tree/        — BT nodes
-│   ├── nav2_costmap/              — Costmap layers
-│   ├── nav2_localization/         — AMCL / Map Server
-│   ├── nav2_servers/              — Lifecycle / Velocity / Collision …
+│   ├── new-nav2-plugin/           — Nav 2 plugin scaffold recipe
+│   ├── nav2-core-interfaces/      — Plugin base classes
+│   ├── nav2-controllers/          — DWB / MPPI / RPP …
+│   ├── nav2-planners/             — NavFn / SMAC / Theta* …
+│   ├── nav2-behavior-tree/        — BT nodes
+│   ├── nav2-costmap/              — Costmap layers
+│   ├── nav2-localization/         — AMCL / Map Server
+│   ├── nav2-servers/              — Lifecycle / Velocity / Collision …
 │   │  ── gz-sim / Gazebo ──
 │   ├── gz-build/                  — cmake / ninja / colcon / bazel recipes
 │   ├── gz-test/                   — ctest filters, gtest, headless
@@ -144,7 +144,7 @@ When Claude takes on a task it automatically consults the relevant
 directly:
 
 ```
-apply all the steps in .claude/skills/ros2_lifecycle/SKILL.md
+apply all the steps in .claude/skills/ros2-lifecycle/SKILL.md
 ```
 
 ### Sub-agents
@@ -172,7 +172,7 @@ repo, create a `.claude/settings.local.json` file (it has been added to
 
 ## When adding new content
 
-* A new skill: `.claude/skills/<kebab_or_snake>/SKILL.md` —
+* A new skill: `.claude/skills/<kebab-name>/SKILL.md` —
   `name` and `description` in the frontmatter are **required**.
 * A new slash command: `.claude/commands/<name>.md` —
   `description` in the frontmatter, optional `argument-hint` and

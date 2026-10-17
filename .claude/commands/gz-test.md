@@ -4,7 +4,7 @@ argument-hint: "[ctest -R regex, e.g. INTEGRATION_diff_drive]"
 allowed-tools: ["Bash"]
 ---
 
-Run the gz-sim test suite from `/home/rdadmin/gz-sim`.
+Run the gz-sim test suite from `~/gz-sim`.
 
 1. Make sure `build/` exists. If not, tell the user to run `/gz-build` first.
 2. If `$ARGUMENTS` is empty:

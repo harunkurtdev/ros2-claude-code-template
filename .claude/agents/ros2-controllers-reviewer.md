@@ -15,10 +15,10 @@ Ground your review in:
   command/state interfaces, plain vs chainable, RT rules, plugin export.
 * `.claude/rules/ros2_controllers_reference.md` — per-package catalog (the
   closest existing controller to compare against).
-* `.claude/skills/ros2_controller_creation/SKILL.md` — the canonical
+* `.claude/skills/ros2-controller-creation/SKILL.md` — the canonical
   controller skeleton.
 * For hardware components & bringup: `.claude/rules/ros2_control_demos.md`
-  + `.claude/skills/ros2_control_hardware_interface/SKILL.md`.
+  + `.claude/skills/ros2-control-hardware-interface/SKILL.md`.
 * When unsure, read the real reference packages in
   `~/nav2_ws/src/ros2_controllers/` (`diff_drive_controller`,
   `forward_command_controller`, `imu_sensor_broadcaster`, `pid_controller`)

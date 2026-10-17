@@ -50,25 +50,25 @@ For C++ the same separation lives under `include/<pkg>/<layer>/` and
 | You need to … | Look at |
 |---------------|---------|
 | Understand layer boundaries           | `rules/clean_architecture.md` |
-| Bootstrap a whole workspace from zero | `commands/new-workspace.md` + `skills/new_ros2_workspace/SKILL.md` |
-| Add a new package                     | `commands/new-package.md` + `skills/new_ros2_package/SKILL.md` |
-| Add a node                            | `commands/new-node.md` + `skills/ros2_node_creation/SKILL.md` |
-| Add a lifecycle node                  | `skills/ros2_lifecycle/SKILL.md` |
-| Add a launch file                     | `commands/new-launch.md` + `skills/ros2_launch_config/SKILL.md` |
-| Add a Nav 2 plugin                    | `commands/new-nav2-plugin.md` + `skills/new_nav2_plugin/SKILL.md` |
+| Bootstrap a whole workspace from zero | `commands/new-workspace.md` + `skills/new-ros2-workspace/SKILL.md` |
+| Add a new package                     | `commands/new-package.md` + `skills/new-ros2-package/SKILL.md` |
+| Add a node                            | `commands/new-node.md` + `skills/ros2-node-creation/SKILL.md` |
+| Add a lifecycle node                  | `skills/ros2-lifecycle/SKILL.md` |
+| Add a launch file                     | `commands/new-launch.md` + `skills/ros2-launch-config/SKILL.md` |
+| Add a Nav 2 plugin                    | `commands/new-nav2-plugin.md` + `skills/new-nav2-plugin/SKILL.md` |
 | Pick QoS / topic naming               | `rules/ros2_communication.md` |
-| Write tests                           | `rules/testing.md` + `skills/ros2_testing/SKILL.md` |
-| Write a ros2_control controller       | `rules/ros2_control_architecture.md` + `skills/ros2_controller_creation/SKILL.md` |
+| Write tests                           | `rules/testing.md` + `skills/ros2-testing/SKILL.md` |
+| Write a ros2_control controller       | `rules/ros2_control_architecture.md` + `skills/ros2-controller-creation/SKILL.md` |
 | Look up a ros2_controllers package    | `rules/ros2_controllers_reference.md` (full catalog) |
-| Write a ros2_control hardware component / bring up a robot | `skills/ros2_control_hardware_interface/SKILL.md` + `rules/ros2_control_demos.md` |
+| Write a ros2_control hardware component / bring up a robot | `skills/ros2-control-hardware-interface/SKILL.md` + `rules/ros2_control_demos.md` |
 | Find a runnable ros2_control example   | `rules/ros2_control_demos.md` (17-example map) |
-| Write a behavior-tree node (BT.CPP / ROS 2) | `rules/behaviortree_cpp.md` + `rules/behaviortree_ros2.md` + `skills/behaviortree_node_creation/SKILL.md` |
-| Bridge a VDA 5050 fleet interface     | `rules/vda5050_protocol.md` + `skills/vda5050_integration/SKILL.md` |
+| Write a behavior-tree node (BT.CPP / ROS 2) | `rules/behaviortree_cpp.md` + `rules/behaviortree_ros2.md` + `skills/behaviortree-node-creation/SKILL.md` |
+| Bridge a VDA 5050 fleet interface     | `rules/vda5050_protocol.md` + `skills/vda5050-integration/SKILL.md` |
 | Look up any VDA 5050 message/field    | `rules/vda5050_messages.md` (complete spec) |
 | Generate VDA 5050 code (which format?) | `rules/vda5050_implementation_formats.md` (pydantic / ROS msg / C++ idioms + v2→v3 diffs) |
 | Design something — which layer?       | Agent `clean-arch-architect` |
 | Review a diff before PR               | Agent `ros2-style-reviewer` |
-| Add a new command / skill / agent / rule | `skills/extending_claude_config/SKILL.md` + `/new-command` `/new-skill` `/new-agent` |
+| Add a new command / skill / agent / rule | `skills/extending-claude-config/SKILL.md` + `/new-command` `/new-skill` `/new-agent` |
 
 ## Slash commands
 
@@ -116,49 +116,49 @@ executables — read them when you need the cheatsheet.
 
 | Skill                  | Topic |
 |------------------------|-------|
-| `ros2_node_creation`   | Clean-arch compliant node (Py/C++) |
-| `ros2_lifecycle`       | Managed lifecycle nodes |
-| `ros2_messaging`       | Pub/Sub, thread-safe buffers, synchronization |
-| `ros2_service_action`  | Service/Action server + client wrappers |
-| `ros2_launch_config`   | Modular launch files |
-| `ros2_transforms`      | TF2 wrappers without leaking `geometry_msgs` into domain |
-| `ros2_diagnostics`     | `diagnostic_updater` integration |
-| `ros2_bag`             | rosbag2 record / replay |
-| `ros2_testing`         | Unit, integration, launch_testing |
-| `new_ros2_package`     | Scaffold recipe for `/new-package` |
-| `new_ros2_workspace`   | Bootstrap a whole colcon workspace from zero (`/new-workspace`) |
+| `ros2-node-creation`   | Clean-arch compliant node (Py/C++) |
+| `ros2-lifecycle`       | Managed lifecycle nodes |
+| `ros2-messaging`       | Pub/Sub, thread-safe buffers, synchronization |
+| `ros2-service-action`  | Service/Action server + client wrappers |
+| `ros2-launch-config`   | Modular launch files |
+| `ros2-transforms`      | TF2 wrappers without leaking `geometry_msgs` into domain |
+| `ros2-diagnostics`     | `diagnostic_updater` integration |
+| `ros2-bag`             | rosbag2 record / replay |
+| `ros2-testing`         | Unit, integration, launch_testing |
+| `new-ros2-package`     | Scaffold recipe for `/new-package` |
+| `new-ros2-workspace`   | Bootstrap a whole colcon workspace from zero (`/new-workspace`) |
 
 ### Nav 2
 
 | Skill                   | Topic |
 |-------------------------|-------|
-| `nav2_core_interfaces`  | Controller / GlobalPlanner / Smoother / GoalChecker / ProgressChecker / Behavior bases |
-| `nav2_controllers`      | DWB (13 critics), MPPI (11 critics), RPP, Graceful, Rotation Shim |
-| `nav2_planners`         | NavFn, SMAC (2D / Hybrid-A* / Lattice), Theta*, Route Server |
-| `nav2_behavior_tree`    | 82 BT nodes, 15 default trees |
-| `nav2_costmap`          | Static, Obstacle, Voxel, Inflation, Range, Denoise + filters |
-| `nav2_localization`     | AMCL, Map Server |
-| `nav2_servers`          | Lifecycle Manager, Velocity Smoother, Collision Monitor, Docking, Following, Python API |
-| `new_nav2_plugin`       | Scaffold recipe for `/new-nav2-plugin` |
+| `nav2-core-interfaces`  | Controller / GlobalPlanner / Smoother / GoalChecker / ProgressChecker / Behavior bases |
+| `nav2-controllers`      | DWB (13 critics), MPPI (11 critics), RPP, Graceful, Rotation Shim |
+| `nav2-planners`         | NavFn, SMAC (2D / Hybrid-A* / Lattice), Theta*, Route Server |
+| `nav2-behavior-tree`    | 82 BT nodes, 15 default trees |
+| `nav2-costmap`          | Static, Obstacle, Voxel, Inflation, Range, Denoise + filters |
+| `nav2-localization`     | AMCL, Map Server |
+| `nav2-servers`          | Lifecycle Manager, Velocity Smoother, Collision Monitor, Docking, Following, Python API |
+| `new-nav2-plugin`       | Scaffold recipe for `/new-nav2-plugin` |
 
 ### ros2_control
 
 | Skill                       | Topic |
 |-----------------------------|-------|
-| `ros2_controller_creation`  | Write/extend a ros2_control controller or broadcaster (base class, interfaces, lifecycle, RT-safe `update()`, params, pluginlib) |
-| `ros2_control_hardware_interface` | Write a hardware component (System/Actuator/Sensor) + URDF `<ros2_control>` + bringup (from ros2_control_demos) |
+| `ros2-controller-creation`  | Write/extend a ros2_control controller or broadcaster (base class, interfaces, lifecycle, RT-safe `update()`, params, pluginlib) |
+| `ros2-control-hardware-interface` | Write a hardware component (System/Actuator/Sensor) + URDF `<ros2_control>` + bringup (from ros2_control_demos) |
 
 ### Behavior trees
 
 | Skill                          | Topic |
 |--------------------------------|-------|
-| `behaviortree_node_creation`   | Write a BT leaf node — plain BehaviorTree.CPP (Sync/Stateful/Condition) or BehaviorTree.ROS2 wrappers (action/service/topic), ports, registration, XML v4 |
+| `behaviortree-node-creation`   | Write a BT leaf node — plain BehaviorTree.CPP (Sync/Stateful/Condition) or BehaviorTree.ROS2 wrappers (action/service/topic), ports, registration, XML v4 |
 
 ### Fleet interface
 
 | Skill                  | Topic |
 |------------------------|-------|
-| `vda5050_integration`  | Bridge a VDA 5050 v3.0.0 fleet-control interface (MQTT/JSON) onto Nav 2 under Clean Architecture |
+| `vda5050-integration`  | Bridge a VDA 5050 v3.0.0 fleet-control interface (MQTT/JSON) onto Nav 2 under Clean Architecture |
 
 ### gz-sim / Gazebo
 
@@ -174,7 +174,7 @@ executables — read them when you need the cheatsheet.
 
 | Skill                     | Topic |
 |---------------------------|-------|
-| `extending_claude_config` | Author a new rule / skill / command / agent for this `.claude/` config and index it (`/new-skill`, `/new-command`, `/new-agent`) |
+| `extending-claude-config` | Author a new rule / skill / command / agent for this `.claude/` config and index it (`/new-skill`, `/new-command`, `/new-agent`) |
 
 ## Rules
 

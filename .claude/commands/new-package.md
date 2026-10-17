@@ -14,7 +14,7 @@ Argument handling (`$ARGUMENTS`):
 If `$ARGUMENTS` is empty or malformed, ask the user before doing anything.
 
 Process:
-1. Read the `new_ros2_package` skill end to end.
+1. Read the `new-ros2-package` skill end to end.
 2. Verify `src/<package_name>/` does not already exist.
 3. Run `ros2 pkg create` with the right build type:
    * Python: `ros2 pkg create --build-type ament_python <name>
@@ -24,7 +24,7 @@ Process:
      --license Apache-2.0 --maintainer-name "$(git config user.name)"
      --maintainer-email "$(git config user.email)"`
 4. **Restructure into Clean Architecture layout** following the
-   `new_ros2_package` skill's templates:
+   `new-ros2-package` skill's templates:
    * Python:
      ```
      src/<name>/<name>/

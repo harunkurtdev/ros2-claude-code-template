@@ -15,9 +15,9 @@ Ground your review in:
   factory, ports/blackboard, XML v4.
 * `.claude/rules/behaviortree_ros2.md` — the four ROS 2 wrappers + their
   override contract + `TreeExecutionServer`.
-* `.claude/skills/behaviortree_node_creation/SKILL.md` — the canonical
+* `.claude/skills/behaviortree-node-creation/SKILL.md` — the canonical
   skeletons.
-* For Nav 2-specific BT nodes, defer to the `nav2_behavior_tree` skill.
+* For Nav 2-specific BT nodes, defer to the `nav2-behavior-tree` skill.
 * When unsure, read the real sources in `~/nav2_ws/src/BehaviorTree.CPP/`
   (`sample_nodes/`) and `~/nav2_ws/src/BehaviorTree.ROS2/`
   (`btcpp_ros2_samples/`).

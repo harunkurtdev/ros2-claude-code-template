@@ -1,5 +1,5 @@
 ---
-description: Scaffold a modular launch file (Python or XML) inside an existing package, following the ros2_launch_config skill.
+description: Scaffold a modular launch file (Python or XML) inside an existing package, following the ros2-launch-config skill.
 argument-hint: "<package> <launch_name> [python|xml]"
 allowed-tools: ["Bash", "Read", "Write", "Edit"]
 ---
@@ -12,7 +12,7 @@ Argument handling (`$ARGUMENTS`):
 3. `<format>` — optional, defaults to `python`.
 
 Process:
-1. Read the `ros2_launch_config` skill end to end.
+1. Read the `ros2-launch-config` skill end to end.
 2. Place the file at `src/<package>/launch/<launch_name>.launch.<ext>`.
 3. Use the skill's modular template:
    * `LaunchDescription` returned from `generate_launch_description()`.

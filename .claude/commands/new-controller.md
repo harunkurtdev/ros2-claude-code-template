@@ -17,7 +17,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is missing, ask before scaffolding.
 
 Process:
-1. Read the skill `ros2_controller_creation` and the rule
+1. Read the skill `ros2-controller-creation` and the rule
    `ros2_control_architecture.md`; pick the closest existing controller
    in `~/nav2_ws/src/ros2_controllers/` to mirror
    (`forward_command_controller` for plain, `diff_drive_controller` for

@@ -11,7 +11,7 @@
   every controller in this repo links `controller_interface::controller_interface`.
 - **Runnable examples / hardware side:** `~/nav2_ws/src/ros2_control_demos/`
   — see `ros2_control_demos.md` (catalog) and
-  `skills/ros2_control_hardware_interface/SKILL.md` (write a hardware plugin).
+  `skills/ros2-control-hardware-interface/SKILL.md` (write a hardware plugin).
 
 > A controller in ros2_control is **not** a standalone node. It is a
 > **pluginlib plugin** loaded into the `controller_manager` process and

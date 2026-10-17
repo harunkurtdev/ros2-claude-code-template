@@ -4,7 +4,7 @@ argument-hint: "[extra cmake args]"
 allowed-tools: ["Bash"]
 ---
 
-You are about to build gz-sim from `/home/rdadmin/gz-sim`.
+You are about to build gz-sim from `~/gz-sim`.
 
 1. If `build/` does not yet exist, configure it:
    `cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=ON $ARGUMENTS`

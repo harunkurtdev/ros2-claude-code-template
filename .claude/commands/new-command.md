@@ -16,7 +16,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is unclear, ask before writing.
 
 Process:
-1. Read the `extending_claude_config` skill (conventions + templates).
+1. Read the `extending-claude-config` skill (conventions + templates).
 2. Verify `commands/<command_name>.md` does not already exist.
 3. Create `commands/<command_name>.md` with:
    * frontmatter: `description:` (one-line, imperative),

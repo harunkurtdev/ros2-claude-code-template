@@ -4,7 +4,7 @@ argument-hint: "[--all | <file paths>]"
 allowed-tools: ["Bash"]
 ---
 
-Lint changed files in `/home/rdadmin/gz-sim`.
+Lint changed files in `~/gz-sim`.
 
 1. If `$ARGUMENTS` is empty, run only over changed-vs-main:
    `pre-commit run --from-ref origin/main --to-ref HEAD`

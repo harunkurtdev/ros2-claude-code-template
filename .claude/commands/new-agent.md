@@ -17,7 +17,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is unclear (which rules does it review against?), ask first.
 
 Process:
-1. Read the `extending_claude_config` skill (conventions + templates) and
+1. Read the `extending-claude-config` skill (conventions + templates) and
    skim a sibling agent of the same role
    (`ros2-style-reviewer`/`vda5050-reviewer` for reviewers,
    `clean-arch-architect`/`ecs-architect` for architects).

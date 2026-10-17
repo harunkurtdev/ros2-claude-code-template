@@ -18,7 +18,7 @@ Ground your review in:
 * `.claude/rules/vda5050_messages.md` — complete field-by-field message
   spec + communication processes (the authority for field-level checks).
 * `.claude/rules/clean_architecture.md` — layer boundaries for the bridge.
-* `.claude/skills/vda5050_integration/SKILL.md` — the reference layering.
+* `.claude/skills/vda5050-integration/SKILL.md` — the reference layering.
 * `.claude/rules/vda5050_implementation_formats.md` — the three accepted
   code formats (pydantic / ROS `.msg`+bridge / C++ structs) and the
   v2→v3 enum/field differences. Check the diff's model representation
@@ -128,7 +128,7 @@ Ground your review in:
 * `operatingMode` gates order acceptance (only `AUTOMATIC` /
   `SEMIAUTOMATIC` / `INTERVENED`).
 
-### Nav 2 mapping (`vda5050_integration` SKILL)
+### Nav 2 mapping (`vda5050-integration` SKILL)
 
 * `order` node → `NavigateToPose`/`NavigateThroughPoses`;
   `cancelOrder` → goal cancel; `initializePosition` → `/initialpose`.

@@ -18,8 +18,8 @@ Process:
 1. Verify the package exists and matches the requested language
    (look at the build type in `package.xml`).
 2. Read the relevant skill:
-   * `ros2_node_creation` for `standard`.
-   * `ros2_lifecycle` for `lifecycle`.
+   * `ros2-node-creation` for `standard`.
+   * `ros2-lifecycle` for `lifecycle`.
 3. Place files following Clean Architecture:
    * **Infrastructure** layer hosts the ROS 2 adapter (the actual Node).
    * **Application** layer hosts the use-case the node orchestrates.

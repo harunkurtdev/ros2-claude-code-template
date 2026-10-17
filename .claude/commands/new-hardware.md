@@ -16,7 +16,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is missing, ask before scaffolding.
 
 Process:
-1. Read the skill `ros2_control_hardware_interface` and the rules
+1. Read the skill `ros2-control-hardware-interface` and the rules
    `ros2_control_architecture.md` + `ros2_control_demos.md`; pick the
    closest example in `~/nav2_ws/src/ros2_control_demos/` to mirror
    (`example_1` system, `example_6` actuator, `example_5` sensor).

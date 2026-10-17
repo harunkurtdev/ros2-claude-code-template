@@ -117,7 +117,7 @@ mqtt.publish(f"{prefix}/state", json.dumps(d))
   `client_node_->UpdateActionState(action, RUNNING|FINISHED|FAILED)`.
 - **Generate this when** the robot side must expose VDA 5050 as ROS 2
   messages and integrate with Nav 2 — the same shape as the template's
-  `vda5050_integration` skill (this is its closest real-world sibling).
+  `vda5050-integration` skill (this is its closest real-world sibling).
 
 ---
 

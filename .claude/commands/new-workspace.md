@@ -15,7 +15,7 @@ Argument handling (`$ARGUMENTS`):
 If anything is unclear (path already exists, prefix), ask before acting.
 
 Process:
-1. Read the `new_ros2_workspace` skill end to end.
+1. Read the `new-ros2-workspace` skill end to end.
 2. Verify `<workspace_path>` does not already contain a `src/`.
 3. Create the layout: `<ws>/src`, `.gitignore` (build/ install/ log/),
    top-level `README.md` with the build/source/test commands; `git init`
@@ -23,7 +23,7 @@ Process:
 4. Copy this template's `.claude/` into the new workspace root so the
    slash commands work there (skip if creating inside the template repo).
 5. Seed packages in dependency order, delegating to the
-   `new_ros2_package` skill / `/new-package`:
+   `new-ros2-package` skill / `/new-package`:
    * `<prefix>_interfaces` (ament_cmake) — only if custom msgs are needed.
    * `<prefix>_core` (Clean Architecture, language per user).
    * `<prefix>_bringup` (ament_python) — top-level launch/config.

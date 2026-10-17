@@ -81,4 +81,4 @@ bazel test  //... --config=linux
   current Gazebo distribution (`Rotary` → check `package.xml`).
 * Out-of-date `gz-msgs` headers → rebuild `gz-msgs` before `gz-sim`.
 
-Always cd into the repo root (`/home/rdadmin/gz-sim`) before running these.
+Always cd into the repo root (`~/gz-sim`) before running these.

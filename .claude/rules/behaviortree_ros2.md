@@ -135,7 +135,7 @@ logger; combine with BT.CPP's `Groot2Publisher` for live visualization.
 |------|-----|
 | Call a ROS 2 action/service/topic from a tree | the matching wrapper above |
 | Run a whole tree as a ROS 2 action service | `TreeExecutionServer` |
-| Navigation-specific BT nodes | `nav2_behavior_tree` (skill `nav2_behavior_tree`) |
+| Navigation-specific BT nodes | `nav2_behavior_tree` (skill `nav2-behavior-tree`) |
 | A pure-logic node (no ROS) | plain BT.CPP `SyncActionNode`/`StatefulActionNode` (`behaviortree_cpp.md`) |
 
-See skill `behaviortree_node_creation` for the full how-to.
+See skill `behaviortree-node-creation` for the full how-to.

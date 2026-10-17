@@ -17,12 +17,12 @@ Argument handling (`$ARGUMENTS`):
 If `<plugin_kind>` or `<ClassName>` is missing, ask the user.
 
 Process:
-1. Read `.claude/skills/new_nav2_plugin/SKILL.md` end to end.
+1. Read `.claude/skills/new-nav2-plugin/SKILL.md` end to end.
 2. Read the matching upstream interface skill:
    * `controller` / `planner` / `smoother` / `goal_checker` /
-     `progress_checker` / `behavior` → `nav2_core_interfaces`.
-   * `costmap_layer` → `nav2_costmap`.
-   * `bt_node` → `nav2_behavior_tree`.
+     `progress_checker` / `behavior` → `nav2-core-interfaces`.
+   * `costmap_layer` → `nav2-costmap`.
+   * `bt_node` → `nav2-behavior-tree`.
 3. Create (or reuse) the host package (`ament_cmake`). If creating,
    follow the `new-package` command.
 4. Generate:

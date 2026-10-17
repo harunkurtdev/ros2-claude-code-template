@@ -50,7 +50,7 @@ spawners. Use them as copy-paste templates for new hardware.
 | `hardware_interface::ActuatorInterface` | one actuator's command + state | per-joint modular hardware (example 6, 14) |
 | `hardware_interface::SensorInterface` | **state interfaces only** | standalone sensors (example 5) |
 
-See `skills/ros2_control_hardware_interface/SKILL.md` to write one.
+See `skills/ros2-control-hardware-interface/SKILL.md` to write one.
 
 ## Anatomy of a demo package
 

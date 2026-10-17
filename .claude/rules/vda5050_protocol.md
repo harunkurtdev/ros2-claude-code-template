@@ -19,7 +19,7 @@ control, jointly published by the **VDA** and **VDMA**.
   - `assets/` — UML / process diagrams.
 - **Reference ROS 2 implementation:** `~/nav2_ws/src/vda5050_connector/`
   — a Clean-Architecture bridge that maps VDA 5050 onto Nav 2. See
-  skill `vda5050_integration`.
+  skill `vda5050-integration`.
 
 > Semantic versioning: `[Major].[Minor].[Patch]`. Major (x.0.0) =
 > breaking (new mandatory fields); Minor (3.x.0) = backward-compatible

@@ -25,7 +25,7 @@ For the `ros-*` kinds, also ask for the interface type (e.g.
 If anything is missing, ask before scaffolding.
 
 Process:
-1. Read the skill `behaviortree_node_creation` and the rules
+1. Read the skill `behaviortree-node-creation` and the rules
    `behaviortree_cpp.md` (plain) / `behaviortree_ros2.md` (ros-*). Mirror
    the closest sample (`~/nav2_ws/src/BehaviorTree.CPP/sample_nodes/` or
    `~/nav2_ws/src/BehaviorTree.ROS2/btcpp_ros2_samples/src/`).

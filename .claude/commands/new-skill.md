@@ -7,15 +7,15 @@ allowed-tools: ["Bash", "Read", "Write", "Edit"]
 Add a new skill to this `.claude/` config.
 
 Argument handling (`$ARGUMENTS`):
-1. `<skill_name>` — `snake_case` or `kebab-case` (required); becomes the
-   directory name and the frontmatter `name`.
+1. `<skill_name>` — `kebab-case`: lowercase letters, digits, and hyphens
+   (required); becomes the directory name and the frontmatter `name`.
 2. `[description]` — one-line, trigger-oriented summary. If missing, ask.
 
 If anything is unclear (does it pair with a command/agent? which rules?),
 ask before writing.
 
 Process:
-1. Read the `extending_claude_config` skill (conventions + templates).
+1. Read the `extending-claude-config` skill (conventions + templates).
 2. Verify `skills/<skill_name>/` does not already exist.
 3. Create `skills/<skill_name>/SKILL.md` with:
    * YAML frontmatter `name:` + `description:` (the description must say
@@ -24,7 +24,7 @@ Process:
      repo under `~/nav2_ws/src/`, a "first decision" section if it has
      variants, step-by-step instructions, and a "Common pitfalls" list.
    * tone/sections matching a sibling skill (e.g.
-     `ros2_controller_creation`).
+     `ros2-controller-creation`).
 4. **Index it**:
    * add a row to the **Skills index** in `.claude/CLAUDE.md` (correct
      subsection).
